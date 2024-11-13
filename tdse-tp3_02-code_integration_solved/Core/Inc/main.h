@@ -71,6 +71,8 @@ void Error_Handler(void);
 #define D12_GPIO_Port GPIOA
 #define D11_Pin GPIO_PIN_7
 #define D11_GPIO_Port GPIOA
+#define D6_Pin GPIO_PIN_10
+#define D6_GPIO_Port GPIOB
 #define D9_Pin GPIO_PIN_7
 #define D9_GPIO_Port GPIOC
 #define D7_Pin GPIO_PIN_8
@@ -83,8 +85,13 @@ void Error_Handler(void);
 #define TCK_GPIO_Port GPIOA
 #define SWO_Pin GPIO_PIN_3
 #define SWO_GPIO_Port GPIOB
+#define D5_Pin GPIO_PIN_4
+#define D5_GPIO_Port GPIOB
+#define D4_Pin GPIO_PIN_5
+#define D4_GPIO_Port GPIOB
 #define D10_Pin GPIO_PIN_6
 #define D10_GPIO_Port GPIOB
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
@@ -94,5 +101,3 @@ void Error_Handler(void);
 #endif
 
 #endif /* __MAIN_H */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
