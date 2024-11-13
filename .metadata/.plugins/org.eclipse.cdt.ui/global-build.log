@@ -1,0 +1,26 @@
+20:15:17 **** Incremental Build of configuration Debug for project tdse-tp2_01-model_integration ****
+make -j4 all 
+arm-none-eabi-gcc "../app/src/app.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/app.d" -MT"app/src/app.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "app/src/app.o"
+../app/src/app.c: In function 'app_update':
+../app/src/app.c:127:18: warning: variable 'cycle_counter' set but not used [-Wunused-but-set-variable]
+  127 |         uint32_t cycle_counter;
+      |                  ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "tdse-tp2_01-model_integration.elf" @"objects.list"  -lrdimon -mcpu=cortex-m3 -T"C:\Users\Usuario\Documents\21_Taller_de_sistemas_embebidos\tdse_workspace_tp3\tdse-tp2_01-model_integration\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tdse-tp2_01-model_integration.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.16.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: warning: tdse-tp2_01-model_integration.elf has a LOAD segment with RWX permissions
+Finished building target: tdse-tp2_01-model_integration.elf
+ 
+arm-none-eabi-size  tdse-tp2_01-model_integration.elf 
+arm-none-eabi-objdump -h -S tdse-tp2_01-model_integration.elf  > "tdse-tp2_01-model_integration.list"
+   text	   data	    bss	    dec	    hex	filename
+  15776	    160	   2304	  18240	   4740	tdse-tp2_01-model_integration.elf
+Finished building: default.size.stdout
+ 
+Finished building: tdse-tp2_01-model_integration.list
+ 
+20:15:45 **** Incremental Build of configuration Debug for project tdse-tp2_01-model_integration ****
+make -j4 all 
+arm-none-eabi-size  tdse-tp2_01-model_integration.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15776	    160	   2304	  18240	   4740	tdse-tp2_01-model_integration.elf
+Finished building: default.size.stdout
+ 

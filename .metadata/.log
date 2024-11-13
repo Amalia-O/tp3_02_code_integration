@@ -1,0 +1,18 @@
+!SESSION 2024-11-13 20:00:29.470 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_AR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-11-13 20:01:22.079
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-11-13 20:01:22.087
+!MESSAGE Log4j2 initialized with config file C:\Users\Usuario\Documents\21_Taller_de_sistemas_embebidos\tdse_workspace_tp3\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-11-13 20:01:27.425
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-11-13 20:03:28.803
+!MESSAGE Indexed 'tdse-tp2_01-model_integration' (26 sources, 89 headers) in 9.44 sec: 6,708 declarations; 23,208 references; 10 unresolved inclusions; 278 syntax errors; 983 unresolved names (3.2%)
