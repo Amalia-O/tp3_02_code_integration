@@ -6,3 +6,4 @@ eclipse.preferences.version=1
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:tdse-tp2_01-model_integration/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:tdse-tp2_01-model_integration/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:tdse-tp3_02-code_integration_solved/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:tdse-tp3_02-code_integration_solved/activeLaunchTarget=null\:---

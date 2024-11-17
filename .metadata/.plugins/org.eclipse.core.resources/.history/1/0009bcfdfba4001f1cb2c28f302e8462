@@ -1,0 +1,29 @@
+  display.c (display.h)
+   
+	estructura pcf8574_t: Sirve para establecer comunicaación I2C. Contiene:
+	*	int address;
+    *	uint8_t data;
+    *	bool displayPinRs;
+    *	bool displayPinRw;
+    *	bool displayPinEn;
+    *	bool displayPinA;
+    *	bool displayPinD4;
+    *	bool displayPinD5;
+    *	bool displayPinD6;
+    *	bool displayPinD7;
+    
+    estructura display_t: contiene un valor displayConnection_t connection.
+    
+    lista displayConnection_t: incluye la enumeración de los 3 tipos de comunicación posibles: DISPLAY_CONNECTION_GPIO_4BITS, DISPLAY_CONNECTION_GPIO_8BITS, DISPLAY_CONNECTION_I2C_PCF8574_IO_EXPANDER.
+    
+    método void displayInit( displayConnection_t connection): asigna a display_t display el tipo de conexión (parámetro connection_t connection) a establecer con el display e inicia la misma.
+    
+    método void displayCharPositionWrite( uint8_t charPositionX, uint8_t charPositionY ): Posiciona el cursor de escritura en la charPositionX y charPositionY pasadas por parámetro. 
+    
+    método void displayStringWrite( const char * str ): Llama a displayCodeWrite() para escribir cada caracter del string en el display.
+    
+    método static void displayCodeWrite( bool type, uint8_t dataBus): envía aun código al display, de control o datos (para imprimir en pantalla), se configura el display para escrtura y se envía un byte de datos al display.
+    
+    método static void displayPinWrite( uint8_t pinName, int value ): Según el tipo de conexión establecido y el pin enviado, se utiliza el método AL_GPIO_WritePin para escribir sobre ese pin, el valor value pasado por parámetro.
+    
+    

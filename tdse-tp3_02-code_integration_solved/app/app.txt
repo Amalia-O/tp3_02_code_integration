@@ -1,5 +1,20 @@
-  app.c (app.h)
-   Endless loops, which execute tasks with fixed computing time. This 
-   sequential execution is only deviated from when an interrupt event occurs.
+  app.c (app.h):
+  
+	estructura task_cfg_t: Estructura de configuración, contiene dos punteros a funcion void con parametros (void *) llamados task_init() y task_update() y un puntero a void llamado parameters.
+	*	task_init: Este puntero a función apunta hacia la tarea que se quiere inicializar, como por ejemplo la función task_test_init de task_test.c, que inicializa el display y escribe "TdSE Bienvenidos: Test Nro: ".
+	*	task_update: Este también es un puntero a función como el anterior, pero en este caso se quiere actualizar las tareas que ya fueron inicializadas anteriormente. Por ejemplo, la funcion task_test_update de task_test.c que va incrementando un valor iniciado en cero y escribiendolo en pantalla en la posición siguiente a "TdSE Bienvenidos: Test Nro: ".
+	*	parameters: Puntero a los parámetros que se quieran agregar en la configuración.
+	
+	estructura task_dta_t: Esta estructura contiene un único elemento, un entero sin signo de 32 bits que se llama WCET (worst case execution time), el cual especifica el peor tiempo de ejecución de cada tarea.
+	
+	lista task_cfg_t task_cfg_list: Esta lista de elementos de task_cfg_t especifica la cantidad de tareas que se quieren ejecutar al inicializar app.c. En nuestro caso son 2 tareas correspondientes a tas_test_init() y task_test_update(). 
+	
+	De la cantidad de tareas agregadas a la lista se obtiene TASK_QTY definido como (sizeof(task_cfg_list)/sizeof(task_cfg_t)).
 
-...
+	task_dta_t task_dta_list[TASK_QTY]: Esta lista contiene los WCET de cada una de las tareas. Se inicializa a TASK_X_WCET_INI, que se define al principio de app.c.
+
+	método app_init():  Función que inicializa app.c en el main. Es una función devuelve void y recibe  void. Primero se imprime en consola con la función LOGGER_LOG para indicar que la aplicación está inicializada y los contadores están funcionando. Se realiza un ciclo para iniciar las tareas dentro de la lista task_cfg_t task_cfg_list y se inicializan los tiempos dentro de la lista task_dta_t task_dta_list.
+	
+	método app_update(): Función que actualiza las tareas inicializadas en app_init realizando un ciclo en la lista task_cfg_t task_cfg_list sobre los .task_update de cada una de las tareas definidas. Se define el contador cycle_counter_time_us y se compara con el WCET de cada una de las tareas y si es mayor, se hace task_dta_list[index].WCET = cycle_counter_time_us, siendo index la tarea que se está analizando en la lista en dicho instante. Recibe void y devuelve void.
+	
+	

@@ -1,4 +1,9 @@
   task_test.c (task_test.h) 
-   Non-Blocking & Update By Time Code -> Test Code Integration
-  
-...
+
+	estructura task_test_dta_t: contiene un único parámetro entero sin signo de 32 bits que asocia un tick a cada tarea.
+	
+	método void task_test_init(void *parameters): Devuelve void y recibe un puntero a void. Inicializa el display y escribe "TdSE Bienvenidos: Test Nro: ". Inicializa el contador g_task_test_cnt = G_TASK_TEST_CNT_INIT, macro definida en task_test.c. Inicializa el contador g_task_test_tick_cnt = G_TASK_TEST_TICK_CNT_INI, macro definida en task_test.c.
+	
+	método void task_test_update(void *parameters): Cada DEL_TEST_XX_MAX ticks de reloj, se escribe en el display en la posición siguiente a "TdSE Bienvenidos: Test Nro: " g_task_test_cnt/1000ul. Ambos contadores se incrementan de forma sincrónica (con cada tick de reloj).
+	
+	

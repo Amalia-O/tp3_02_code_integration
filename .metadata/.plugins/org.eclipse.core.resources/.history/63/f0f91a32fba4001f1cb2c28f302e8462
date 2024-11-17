@@ -1,0 +1,15 @@
+  display.c (display.h)
+   
+	estructura pcf8574_t: Sirve para establecer comunicaación I2C. Contiene:
+	*	int address;
+    *	uint8_t data;
+    *	bool displayPinRs;
+    *	bool displayPinRw;
+    *	bool displayPinEn;
+    *	bool displayPinA;
+    *	bool displayPinD4;
+    *	bool displayPinD5;
+    *	bool displayPinD6;
+    *	bool displayPinD7;
+    
+    

@@ -1,0 +1,5 @@
+  main.c (main.h)
+  
+	método app_init(): Función que inicializa app.c en el main. Es una función devuelve void y recibe  void. Primero se imprime en consola con la función LOGGER_LOG para indicar que la aplicación está inicializada y los contadores están funcionando. Se realiza un ciclo para iniciar las tareas dentro de la lista task_cfg_t task_cfg_list y se inicializan los tiempos dentro de la lista task_dta_t task_dta_list.
+
+	método app_update(): Función que actualiza las tareas inicializadas en app_init realizando un ciclo en la lista task_cfg_t task_cfg_list sobre los .task_update de cada una de las tareas definidas. Se define el contador cycle_counter_time_us y se compara con el WCET de cada una de las tareas y si es mayor, se hace task_dta_list[index].WCET = cycle_counter_time_us, siendo index la tarea que se está analizando en la lista en dicho instante. Recibe void y devuelve void.

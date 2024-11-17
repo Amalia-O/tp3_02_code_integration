@@ -1,0 +1,5 @@
+  task_test.c (task_test.h) 
+
+	estructura task_test_dta_t: contiene un único parámetro entero sin signo de 32 bits que asocia un tick a cada tarea.
+	
+	método void task_test_init(void *parameters): Devuelve void y recibe un puntero a void. Inicializa el display y escribe "TdSE Bienvenidos: Test Nro: ". Inicializa el contador g_task_test_cnt = G_TASK_TEST_CNT_INIT, macro definida en task_test.c.

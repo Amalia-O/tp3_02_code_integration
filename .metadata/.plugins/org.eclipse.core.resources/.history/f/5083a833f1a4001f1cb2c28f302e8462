@@ -1,0 +1,7 @@
+  app.c (app.h):
+  
+	estructura task_cfg_t: Estructura de configuración, contiene dos punteros a function void con parametros (void *) llamados task_init() y task_update() y un puntero a void llamado parameters.
+	*	task_init: Este puntero a función apunta hacia la tarea que se quiere inicializar, como por ejemplo la función task_sensor_init de task_sensor.c, que inicializa los sensores que se vayan a utilizar en el sistema.
+	*	task_update: Este también es un puntero a función como el anterior, pero en este caso se quiere actualizar las tareas que ya fueron inicializadas anteriormente. Por ejemplo, la funcion task_sensor_update de task_sensor.c es la que actualiza los estados y los contadores utilizados en cada uno de los sensores disponibles, dependiendo de las acciones externas del sistema o del usuario (pulsar o soltar un botón).
+	*	parameters: Puntero a los parámetros que se quieran agregar en la configuración.
+	
